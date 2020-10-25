@@ -7,7 +7,6 @@ class Room
   public $name;
   public $id;
   private $objects = [];
-  public $isComplete = false;
 
   public function __construct($room)
   {
@@ -57,9 +56,6 @@ class Room
         $nextRoom = $this->connectedRooms[$route]['room'];
       break;
       }
-    } 
-    if (!$nextRoom) {
-      $this->isComplete = true;
     }
     return $nextRoom;
   }

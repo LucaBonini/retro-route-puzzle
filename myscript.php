@@ -13,6 +13,7 @@ $startRoom = isset($input['startRoom']) ? $input['startRoom'] : null;
 $objects = isset($input['objects']) ? $input['objects'] : null;
 $objectsFound = [];
 
+// Exit if there is a missing input
 if (is_null($startRoom) || is_null($objects) || count($map) == 0) {
   exit('Missing input');
 }
