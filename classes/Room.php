@@ -21,8 +21,8 @@ class Room
   {
     foreach($this->routes as $route) {
       if (isset($room[$route])) {
-        $this->connectedRooms[$route] = [ // route = north
-          'room' => $room[$route], // id 3
+        $this->connectedRooms[$route] = [
+          'room' => $room[$route],
           'visited' => false
         ];
       }
@@ -40,19 +40,15 @@ class Room
   {
     $objectsFound = [];
     foreach($names as $object) {
-      // print_r('NAMEs');
-      // print_r($object);
-      // print_r($this->objects);
       if (in_array($object, $this->objects)) {
         unset($this->objects[$object]);
         array_push($objectsFound, $object);
       }
     }
-    return count($objectsFound) > 0 ? implode(',', $objectsFound) : 'None';
-    // return $objectsFound;
+    return $objectsFound;
   }
 
-  public function getNextRoom()
+  public function getNextRoomId()
   {
     $nextRoom = false;
     foreach($this->routes as $route) {
@@ -64,7 +60,6 @@ class Room
     } 
     if (!$nextRoom) {
       $this->isComplete = true;
-      print_r('Room '.$this->id.' IS COMPLETE');
     }
     return $nextRoom;
   }

@@ -1,1 +1,1 @@
-php myscript2.php
+php myscript.php
