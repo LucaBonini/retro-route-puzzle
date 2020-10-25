@@ -1,5 +1,5 @@
 # Spacify a base image
-FROM php:7.3-alpine
+FROM php:7.4-alpine
 
 # Set my folder
 #WORKDIR /mnt
