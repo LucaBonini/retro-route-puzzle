@@ -36,8 +36,7 @@ function checkMe($rooms, $id, $objects, $objectsFound)
 
   // format as text and print result of this iteration
   $objectsInRoomText = count($objectsInRoom) > 0 ? implode(',', $objectsInRoom) : 'None';
-  print_r('ID: '.$id.' ROOM: '.$room->name.' Object Collected: '.$objectsInRoomText );
-  print_r("\n");
+  printf("%-4s%-14s%-16s\n", $id, $rooms[$id]->name, $objectsInRoomText);
 
   // get next room id
   $nextRoom = $rooms[$id]->getNextRoomId();
@@ -47,5 +46,7 @@ function checkMe($rooms, $id, $objects, $objectsFound)
     checkMe($rooms, $nextRoom, $objects, $objectsFound);
   }
 }
+
+printf("ID  Room          Object collected\n----------------------------------\n");
 
 checkMe($rooms, $startRoom, $objects, $objectsFound);
