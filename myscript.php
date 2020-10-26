@@ -2,11 +2,9 @@
 
 include('classes/Room.php');
 
-// echo "start";
-
 $ROUTES = ['north', 'south', 'west', 'east'];
 
-$input = json_decode(file_get_contents(getcwd().'/data/input2.json'), true);
+$input = json_decode(file_get_contents(getcwd().'/data/'.$argv[1]), true);
 
 $map = isset($input['map']) ? $input['map'] : [];
 $startRoom = isset($input['startRoom']) ? $input['startRoom'] : null;
